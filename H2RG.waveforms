@@ -53,8 +53,27 @@ VIDEOmax	EQU	3.31	; Maximum video board DC bias voltage
 ZERO 		EQU	0.0	; Zero volts for power-on sequence
 VSOURCE		EQU	1.0    	; Source load voltage on the ARC46 video board
 
-; Define the video processor outpout offset values
-OFFSET		EQU	$570		; -1.6V as calculated with oscope. 
+; Define the video processor output offset values
+;10/23/13
+;H2RG Binary Search of Bias Voltage. These were chosen by taking 0 sec exposures
+;And using the histogram in ImageJ to set the mean to ~80% of full well.
+;OFFSET		EQU	$399		; -2.75V
+;OFFSET		EQU	$366		; -2.875V
+;OFFSET		EQU	$3CD		; -2.625V
+;OFFSET		EQU	$3B3		; -2.6875V
+;OFFSET		EQU	$3AE		; -2.7V
+;OFFSET		EQU	$3A4		; -2.725V
+;OFFSET		EQU	$39F		; -2.7375V
+OFFSET		EQU	$31F		; -3.05V
+;OFFSET		EQU	$2CD		; -3.25V
+;OFFSET		EQU	$2CD		; -3.25V
+;OFFSET		EQU	$2B2		; -3.315V
+;OFFSET		EQU	$2AC		; -3.33V
+;OFFSET		EQU	$2A6		; -3.345V
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;OLD numbers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;OFFSET		EQU	$570		; -1.6V as calculated with oscope. 
 					; Consistent with H2RG technical manual. RS 7/21/13
 ;OFFSET		EQU	$4CD		; -2.0V, testing. RS 7/21/13
 ;OFFSET		EQU	$3FF		; -2.5V, testing. RS 7/21/13
@@ -64,15 +83,15 @@ OFFSET		EQU	$570		; -1.6V as calculated with oscope.
 ;OFFSET		EQU	$970		; Good value for H2RG per Bob Leach
 
 ; DC bias voltages going to the H2RG array
-DRAIN		EQU	0.40		; Drain node of the output source follower
+DRAIN		EQU	0.00		; Drain node of the output source follower
 SUB		EQU	0.00		; Multiplexer substrate
-VDDA		EQU	3.30		; Power supply
-VBIASPOWER	EQU	3.30		; Power for pixel source follower
-VBIASGATE	EQU	2.40		; Bias for pixel source follower 
-VRESET		EQU	0.15		; Detector reset voltage
-DSUB		EQU	0.55		; Detector substrate
-CELLDRAIN	EQU	0.00		; Drain node of pixel source follower
-VDD		EQU	3.30		; Power supply
+VDDA		EQU	3.25		; Power supply
+VBIASPOWER	EQU	3.25		; Power for pixel source follower
+VBIASGATE	EQU	2.37		; Bias for pixel source follower 
+VRESET		EQU	0.088		; Detector reset voltage
+DSUB		EQU	0.35		; Detector substrate
+CELLDRAIN	EQU	0.0		; Drain node of pixel source follower
+VDD		EQU	3.25		; Power supply
 
 ; Clock board #1 voltage settings
 DACS	DC	END_DACS-DACS-1
@@ -363,42 +382,83 @@ DC_BIAS	DC	$0c4000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095)	; P2, Pin #17
 	DC	$3d8000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #31
 	DC	$3dc000+@CVI(VIDEOmax/VIDEOmax*4095)			; P2, Pin #14  External source follower load
 
+;Individual channel offsets, to be improved
+;Video Board 0
+OFFSET00 EQU OFFSET
+OFFSET01 EQU OFFSET
+OFFSET02 EQU OFFSET
+OFFSET03 EQU OFFSET
+OFFSET04 EQU OFFSET
+OFFSET05 EQU OFFSET
+OFFSET06 EQU OFFSET
+OFFSET07 EQU OFFSET
+
+;Video Board 1
+OFFSET10 EQU OFFSET
+OFFSET11 EQU OFFSET
+OFFSET12 EQU OFFSET
+OFFSET13 EQU OFFSET
+OFFSET14 EQU OFFSET 
+OFFSET15 EQU OFFSET
+OFFSET16 EQU OFFSET
+OFFSET17 EQU OFFSET
+
+;Video Board 2
+OFFSET20 EQU OFFSET
+OFFSET21 EQU OFFSET
+OFFSET22 EQU OFFSET
+OFFSET23 EQU OFFSET
+OFFSET24 EQU OFFSET
+OFFSET25 EQU OFFSET
+OFFSET26 EQU OFFSET
+OFFSET27 EQU OFFSET
+
+;Video Board 3
+OFFSET30 EQU OFFSET
+OFFSET31 EQU OFFSET
+OFFSET32 EQU OFFSET
+OFFSET33 EQU OFFSET
+OFFSET34 EQU OFFSET
+OFFSET35 EQU OFFSET
+OFFSET36 EQU OFFSET
+OFFSET37 EQU OFFSET
+
 ; Video processor offset voltages
-	DC	$0e0000+OFFSET		; Output #0, video board #0
-	DC	$0e4000+OFFSET		; Output #1
-	DC	$0e8000+OFFSET		; Output #2
-	DC	$0ec000+OFFSET		; Output #3
-	DC	$0f0000+OFFSET		; Output #4
-	DC	$0f4000+OFFSET		; Output #5
-	DC	$0f8000+OFFSET		; Output #6
-	DC	$0fc000+OFFSET		; Output #7
+	DC	$0e0000+OFFSET00	; Output #0, video board #0
+	DC	$0e4000+OFFSET01	; Output #1
+	DC	$0e8000+OFFSET02	; Output #2
+	DC	$0ec000+OFFSET03	; Output #3
+	DC	$0f0000+OFFSET04	; Output #4
+	DC	$0f4000+OFFSET05	; Output #5
+	DC	$0f8000+OFFSET06	; Output #6
+	DC	$0fc000+OFFSET07	; Output #7
 
-	DC	$1e0000+OFFSET		; Output #0, video board #1
-	DC	$1e4000+OFFSET		; Output #1
-	DC	$1e8000+OFFSET		; Output #2
-	DC	$1ec000+OFFSET		; Output #3
-	DC	$1f0000+OFFSET		; Output #4
-	DC	$1f4000+OFFSET		; Output #5
-	DC	$1f8000+OFFSET		; Output #6
-	DC	$1fc000+OFFSET		; Output #7
+	DC	$1e0000+OFFSET10	; Output #0, video board #1
+	DC	$1e4000+OFFSET11	; Output #1
+	DC	$1e8000+OFFSET12	; Output #2
+	DC	$1ec000+OFFSET13	; Output #3
+	DC	$1f0000+OFFSET14	; Output #4
+	DC	$1f4000+OFFSET15	; Output #5
+	DC	$1f8000+OFFSET16	; Output #6
+	DC	$1fc000+OFFSET17	; Output #7
 
-	DC	$2e0000+OFFSET		; Output #0, video board #2
-	DC	$2e4000+OFFSET		; Output #1
-	DC	$2e8000+OFFSET		; Output #2
-	DC	$2ec000+OFFSET		; Output #3
-	DC	$2f0000+OFFSET		; Output #4
-	DC	$2f4000+OFFSET		; Output #5
-	DC	$2f8000+OFFSET		; Output #6
-	DC	$2fc000+OFFSET		; Output #7
+	DC	$2e0000+OFFSET20	; Output #0, video board #2
+	DC	$2e4000+OFFSET21	; Output #1
+	DC	$2e8000+OFFSET22	; Output #2
+	DC	$2ec000+OFFSET23	; Output #3
+	DC	$2f0000+OFFSET24	; Output #4
+	DC	$2f4000+OFFSET25	; Output #5
+	DC	$2f8000+OFFSET26	; Output #6
+	DC	$2fc000+OFFSET27	; Output #7
 
-	DC	$3e0000+OFFSET		; Output #0, video board #3
-	DC	$3e4000+OFFSET		; Output #1
-	DC	$3e8000+OFFSET		; Output #2
-	DC	$3ec000+OFFSET		; Output #3
-	DC	$3f0000+OFFSET		; Output #4
-	DC	$3f4000+OFFSET		; Output #5
-	DC	$3f8000+OFFSET		; Output #6
-	DC	$3fc000+OFFSET		; Output #7
+	DC	$3e0000+OFFSET30	; Output #0, video board #3
+	DC	$3e4000+OFFSET31	; Output #1
+	DC	$3e8000+OFFSET32	; Output #2
+	DC	$3ec000+OFFSET33	; Output #3
+	DC	$3f0000+OFFSET34	; Output #4
+	DC	$3f4000+OFFSET34	; Output #5
+	DC	$3f8000+OFFSET36	; Output #6
+	DC	$3fc000+OFFSET37	; Output #7
 END_DC_BIASES
 
 ;  Zero out the DC biases during the power-on sequence
