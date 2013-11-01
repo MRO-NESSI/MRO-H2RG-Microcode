@@ -48,10 +48,10 @@ OPTIONS_REG		EQU	$D000	; Added 7/17/13
 ; Voltage tables
 CLK_HI		EQU 	3.10	; High clock voltage
 CLK_LO		EQU	0.10	; Low clock voltage
-CLKmax		EQU     3.31	; Maximum clock voltage
-VIDEOmax	EQU	3.31	; Maximum video board DC bias voltage
+CLKmax		EQU     3.3	; Maximum clock voltage
+VIDEOmax	EQU	3.3	; Maximum video board DC bias voltage
 ZERO 		EQU	0.0	; Zero volts for power-on sequence
-VSOURCE		EQU	1.0    	; Source load voltage on the ARC46 video board
+VSOURCE		EQU	3.3    	; Source load voltage on the ARC46 video board
 
 ; Define the video processor output offset values
 ;10/23/13
@@ -64,11 +64,11 @@ VSOURCE		EQU	1.0    	; Source load voltage on the ARC46 video board
 ;OFFSET		EQU	$3AE		; -2.7V
 ;OFFSET		EQU	$3A4		; -2.725V
 ;OFFSET		EQU	$39F		; -2.7375V
-OFFSET		EQU	$31F		; -3.05V
-;OFFSET		EQU	$2CD		; -3.25V
-;OFFSET		EQU	$2CD		; -3.25V
-;OFFSET		EQU	$2B2		; -3.315V
-;OFFSET		EQU	$2AC		; -3.33V
+;OFFSET		EQU	$31F		; -3.05V
+;OFFSET		EQU	$312		; -3.08V
+;OFFSET		EQU	$30A		; -3.1V
+;OFFSET		EQU	$2E1		; -3.2V
+OFFSET		EQU	$2AC		; -3.33V
 ;OFFSET		EQU	$2A6		; -3.345V
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;OLD numbers
@@ -87,7 +87,7 @@ DRAIN		EQU	0.00		; Drain node of the output source follower
 SUB		EQU	0.00		; Multiplexer substrate
 VDDA		EQU	3.25		; Power supply
 VBIASPOWER	EQU	3.25		; Power for pixel source follower
-VBIASGATE	EQU	2.37		; Bias for pixel source follower 
+VBIASGATE	EQU	2.2		; Bias for pixel source follower 
 VRESET		EQU	0.088		; Detector reset voltage
 DSUB		EQU	0.35		; Detector substrate
 CELLDRAIN	EQU	0.0		; Drain node of pixel source follower
@@ -352,7 +352,7 @@ DC_BIAS	DC	$0c4000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095)	; P2, Pin #17
 	DC	$0d0000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #32
 	DC	$0d4000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #15
 	DC	$0d8000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #31
-	DC	$0dc000+@CVI(VIDEOmax/VIDEOmax*4095)			; P2, Pin #14  External source follower load
+	DC	$0dc000+@CVI(VSOURCE/VIDEOmax*4095)			; P2, Pin #14  External source follower load
 
 ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
 	DC	$1c4000+@CVI((VDDA+VIDEOmax)/(2.0*VIDEOmax)*4095)	; P2, Pin #17
@@ -363,7 +363,7 @@ DC_BIAS	DC	$0c4000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095)	; P2, Pin #17
 	DC	$1d0000+@CVI(VRESET/VIDEOmax*4095)			; P2, Pin #32
 	DC	$1d4000+@CVI(DSUB/VIDEOmax*4095)			; P2, Pin #15
 	DC	$1d8000+@CVI(CELLDRAIN/VIDEOmax*4095)			; P2, Pin #31
-	DC	$1dc000+@CVI(VIDEOmax/VIDEOmax*4095)			; P2, Pin #14  External source follower load
+	DC	$1dc000+@CVI(VSOURCE/VIDEOmax*4095)			; P2, Pin #14  External source follower load
 
 ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
 	DC	$2c4000+@CVI((VDD+VIDEOmax)/(2.0*VIDEOmax)*4095)	; P2, Pin #17
@@ -374,54 +374,97 @@ DC_BIAS	DC	$0c4000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095)	; P2, Pin #17
 	DC	$2d0000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #32
 	DC	$2d4000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #15
 	DC	$2d8000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #31
-	DC	$2dc000+@CVI(VIDEOmax/VIDEOmax*4095)			; P2, Pin #14  External source follower load
+	DC	$2dc000+@CVI(VSOURCE/VIDEOmax*4095)			; P2, Pin #14  External source follower load
 
 ; Unipolar 0 to 5 volts output voltages, video board #3
 	DC	$3d0000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #32
 	DC	$3d4000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #15
 	DC	$3d8000+@CVI(ZERO/VIDEOmax*4095)			; P2, Pin #31
-	DC	$3dc000+@CVI(VIDEOmax/VIDEOmax*4095)			; P2, Pin #14  External source follower load
+	DC	$3dc000+@CVI(VSOURCE/VIDEOmax*4095)			; P2, Pin #14  External source follower load
 
-;Individual channel offsets, to be improved
+;Individual channel offsets, to be improved, median of each channel found from reference pixels at top of image.
+
+M00 EQU 53796.0
+M01 EQU 54284.0
+M02 EQU 54458.0
+M03 EQU 54274.0
+M04 EQU 53698.0
+M05 EQU 54363.0
+M06 EQU 54080.0
+M07 EQU 53682.0
+
+M10 EQU 53260.0
+M11 EQU 53548.0
+M12 EQU 54404.0
+M13 EQU 53612.0
+M14 EQU 54024.0
+M15 EQU 53667.0
+M16 EQU 53151.0
+M17 EQU 53965.0
+
+M20 EQU 52554.0
+M21 EQU 52750.0
+M22 EQU 52775.0
+M23 EQU 52236.0
+M24 EQU 52534.0
+M25 EQU 51673.0
+M26 EQU 51881.0
+M27 EQU 52208.0
+
+M30 EQU 52469.0
+M31 EQU 51722.0
+M32 EQU 52333.0
+M33 EQU 51260.0
+M34 EQU 51775.0
+M35 EQU 50622.0
+M36 EQU 50618.0
+M37 EQU 50788.0
+
+VB0 EQU 0.0
+VB1 EQU -10.0
+VB2 EQU -20.0
+VB3 EQU -20.0
+
+;Boards are all scaled to CH07 of Board 0
 ;Video Board 0
-OFFSET00 EQU OFFSET
-OFFSET01 EQU OFFSET
-OFFSET02 EQU OFFSET
-OFFSET03 EQU OFFSET
-OFFSET04 EQU OFFSET
-OFFSET05 EQU OFFSET
-OFFSET06 EQU OFFSET
-OFFSET07 EQU OFFSET
+OFFSET00 EQU @CVI(OFFSET+VB0)
+OFFSET01 EQU @CVI(OFFSET+VB0)
+OFFSET02 EQU @CVI(OFFSET+VB0)
+OFFSET03 EQU @CVI(OFFSET+VB0)
+OFFSET04 EQU @CVI(OFFSET+VB0)
+OFFSET05 EQU @CVI(OFFSET+VB0)
+OFFSET06 EQU @CVI(OFFSET+VB0)
+OFFSET07 EQU @CVI(OFFSET+VB0)
 
 ;Video Board 1
-OFFSET10 EQU OFFSET
-OFFSET11 EQU OFFSET
-OFFSET12 EQU OFFSET
-OFFSET13 EQU OFFSET
-OFFSET14 EQU OFFSET 
-OFFSET15 EQU OFFSET
-OFFSET16 EQU OFFSET
-OFFSET17 EQU OFFSET
+OFFSET10 EQU @CVI(OFFSET+VB1)
+OFFSET11 EQU @CVI(OFFSET+VB1)
+OFFSET12 EQU @CVI(OFFSET+VB1)
+OFFSET13 EQU @CVI(OFFSET+VB1)
+OFFSET14 EQU @CVI(OFFSET+VB1)
+OFFSET15 EQU @CVI(OFFSET+VB1)
+OFFSET16 EQU @CVI(OFFSET+VB1)
+OFFSET17 EQU @CVI(OFFSET+VB1)
 
 ;Video Board 2
-OFFSET20 EQU OFFSET
-OFFSET21 EQU OFFSET
-OFFSET22 EQU OFFSET
-OFFSET23 EQU OFFSET
-OFFSET24 EQU OFFSET
-OFFSET25 EQU OFFSET
-OFFSET26 EQU OFFSET
-OFFSET27 EQU OFFSET
+OFFSET20 EQU @CVI(OFFSET+VB2)
+OFFSET21 EQU @CVI(OFFSET+VB2)
+OFFSET22 EQU @CVI(OFFSET+VB2)
+OFFSET23 EQU @CVI(OFFSET+VB2)
+OFFSET24 EQU @CVI(OFFSET+VB2)
+OFFSET25 EQU @CVI(OFFSET+VB2)
+OFFSET26 EQU @CVI(OFFSET+VB2)
+OFFSET27 EQU @CVI(OFFSET+VB2)
 
 ;Video Board 3
-OFFSET30 EQU OFFSET
-OFFSET31 EQU OFFSET
-OFFSET32 EQU OFFSET
-OFFSET33 EQU OFFSET
-OFFSET34 EQU OFFSET
-OFFSET35 EQU OFFSET
-OFFSET36 EQU OFFSET
-OFFSET37 EQU OFFSET
+OFFSET30 EQU @CVI(OFFSET+VB3)
+OFFSET31 EQU @CVI(OFFSET+VB3)
+OFFSET32 EQU @CVI(OFFSET+VB3)
+OFFSET33 EQU @CVI(OFFSET+VB3)
+OFFSET34 EQU @CVI(OFFSET+VB3)
+OFFSET35 EQU @CVI(OFFSET+VB3)
+OFFSET36 EQU @CVI(OFFSET+VB3)
+OFFSET37 EQU @CVI(OFFSET+VB3)
 
 ; Video processor offset voltages
 	DC	$0e0000+OFFSET00	; Output #0, video board #0

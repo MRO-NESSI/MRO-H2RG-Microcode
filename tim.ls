@@ -1,4 +1,4 @@
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 1
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  tim.asm  Page 1
 
 
 
@@ -64,7 +64,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 1
 60                         ; Port C is Enhanced Synchronous Serial Port 0 = ESSI0
 61        FFFFBF           PCRC      EQU     $FFFFBF                           ; Port C Control Register
 62        FFFFBE           PRRC      EQU     $FFFFBE                           ; Port C Data direction Register
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 2
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 2
 
 
 
@@ -130,7 +130,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 122                        ; Software status bits, defined at X:<STATUS = X:0
 123       000000           ST_RCV    EQU     0                                 ; Set to indicate word is from SCI = utility board
 124       000002           IDLMODE   EQU     2                                 ; Set if need to idle after readout
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 3
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 3
 
 
 
@@ -196,7 +196,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 184                        11              Binning
 185                                                0       Not supported
 186                                                1       Yes supported
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 4
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 4
 
 
 
@@ -262,7 +262,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 246       040000           NGST      EQU     $040000                           ; NGST Aladdin implementation
 247       100000           CONT_RD   EQU     $100000                           ; Continuous readout implemented
 248       060000           TWO_XMTR  EQU     $060000                           ; Two fiber optic transmitters on ARC-22
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 5
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 5
 
 
 
@@ -328,7 +328,7 @@ e
 307                                 ; *******************  Command Processing  ******************
 308    
 309                                 ; Read the header and check it for self-consistency
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 6
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 6
 
 
 
@@ -394,7 +394,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 360       P:000084 P:000084 062880            DO      #NUM_COM,END_COM                  ; Loop over the command table
                             00008B
 361       P:000086 P:000086 47D800            MOVE              X:(R0)+,Y1              ; Get the command table entry
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 7
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 7
 
 
 
@@ -460,7 +460,7 @@ k
 412       P:0000B3 P:0000B3 000000            NOP
 413       P:0000B4 P:0000B4 000000            NOP
 414       P:0000B5 P:0000B5 5FF000            MOVE                          Y:RDFO,B
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 8
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 8
 
 
 
@@ -526,7 +526,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 458       P:0000EB P:0000EB 08F4BB            MOVEP             #$028FE2,X:BCR          ; Slow down RDFO access
                             028FE2
 459       P:0000ED P:0000ED 60F400            MOVE              #FO_HDR+1,R0
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 9
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 9
 
 
 
@@ -592,7 +592,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
                             000122
 510       P:000120 P:000120 4FE000            MOVE                          Y:(R0),Y1   ; Read from Y data memory
 511       P:000121 P:000121 0C0090            JMP     <FINISH1                          ; Send out a header with the value
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 10
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 10
 
 
 
@@ -658,7 +658,7 @@ ry
 562                                 ; Load application code from P: memory into its proper locations
 563       P:000157 P:000157 47DB00  LDAPPL    MOVE              X:(R3)+,Y1              ; Application number, not used yet
 564       P:000158 P:000158 0D015A            JSR     <LOAD_APPLICATION
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 11
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 11
 
 
 
@@ -724,7 +724,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 615       P:000187 P:000187 06E8A3            REP     #1000
 616       P:000188 P:000188 000000            NOP
 617                                 L_DELAY
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 12
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 12
 
 
 
@@ -790,7 +790,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 665                                 ;   the utility board
 666       P:0001A9 P:0001A9 07F43F            MOVEP             #>0,X:PCRC              ; Software reset of ESSI0
                             000000
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 13
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 13
 
 
 
@@ -856,7 +856,7 @@ ut)
 716                                                                                     ; TE0 = 0 to NOT enable transmitter #0 yet
 717                                                                                     ; MOD = 0 so its not networked mode
 718       P:0001C0 P:0001C0 07F42F            MOVEP             #%100000,X:PCRD         ; Control Register (0 for GPIO, 1 for ESSI)
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 14
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 14
 
 
 
@@ -922,7 +922,7 @@ ler
 760    
 761                                 ; Initialize the fiber optic serial receiver circuitry
 762       P:0001DE P:0001DE 061480            DO      #20,L_FO_INIT
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 15
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 15
 
 
 
@@ -988,7 +988,7 @@ rs
 807       P:00020C P:00020C 07F42C            MOVEP             #0,X:TX10               ; This helps, don't know why
                             000000
 808       P:00020E P:00020E 547000            MOVE              A1,X:SV_A1
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 16
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 16
 
 
 
@@ -1054,7 +1054,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 865       000007                    COM_BUF   EQU     NWORDS+1                          ; Command buffer
 866       00000E                    SV_A1     EQU     COM_BUF+7                         ; Save accumulator A1
 867    
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Page 17
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timboot.asm  Page 17
 
 
 
@@ -1120,7 +1120,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timboot.asm  Pa
 932    
 933       000036                    END_ADR   EQU     @LCV(L)                           ; End address of P: code written to ROM
 934    
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 18
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  tim.asm  Page 18
 
 
 
@@ -1186,7 +1186,7 @@ expect
 987                                 ;*********  Clock out the H2RG array  *************
 988                                 CLOCK_H2RG
 989       P:000249 P:000249 60F400            MOVE              #FRAME_INIT,R0          ; Initialize the frame for readout
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 19
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  tim.asm  Page 19
 
 
 
@@ -1252,7 +1252,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 1
                             00005F
 1033      P:000277 P:000277 0D039C            JSR     <CLOCK
 1034      P:000278 P:000278 000000            NOP
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 20
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  tim.asm  Page 20
 
 
 
@@ -1318,7 +1318,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 2
 1087      P:00029E P:00029E 0A002F            BSET    #ST_DIRTY,X:<STATUS
 1088      P:00029F P:00029F 60F400            MOVE              #RST_INTERNAL_REGISTERS,R0 ; Clear the H2RG internal registers
                             00007B
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 21
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 21
 
 
 
@@ -1384,7 +1384,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1140                                SET_BIAS_VOLTAGES
 1141      P:0002CC P:0002CC 0D02AA            JSR     <SET_BIASES
 1142      P:0002CD P:0002CD 0C008F            JMP     <FINISH
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 22
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 22
 
 
 
@@ -1450,7 +1450,7 @@ es
 1191      P:0002FC P:0002FC 305A00            MOVE              #TST_RCV,R0             ; Process commands, don't idle
 1192      P:0002FD P:0002FD 601F00            MOVE              R0,X:<IDL_ADR           ;    during the exposure
 1193   
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 23
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 23
 
 
 
@@ -1516,7 +1516,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1246                                SET_EXPOSURE_TIME
 1247      P:00032A P:00032A 46DB00            MOVE              X:(R3)+,Y0
 1248      P:00032B P:00032B 461000            MOVE              Y0,X:EXPOSURE_TIME
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 24
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 24
 
 
 
@@ -1582,7 +1582,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
                             000353
 1299      P:000355 P:000355 010F00            BCLR    #TIM_BIT,X:TCSR0
 1300      P:000356 P:000356 00000C            RTS
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 25
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 25
 
 
 
@@ -1648,7 +1648,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1356      P:000388 P:000388 060AA0            REP     #10
 1357      P:000389 P:000389 000000            NOP
 1358      P:00038A P:00038A 00000C            RTS
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 26
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 26
 
 
 
@@ -1714,7 +1714,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1410                                READ_CONTROLLER_CONFIGURATION
 1411      P:0003B3 P:0003B3 4F8500            MOVE                          Y:<CONFIG,Y1 ; Just transmit the configuration
 1412      P:0003B4 P:0003B4 0C0090            JMP     <FINISH1
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 27
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 27
 
 
 
@@ -1780,7 +1780,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1469      P:0003E3 P:0003E3 01468D  CLK_6     CMP     #6,B
 1470      P:0003E4 P:0003E4 0E23E7            JNE     <CLK_7
 1471      P:0003E5 P:0003E5 0ACE6F            BSET    #15,A
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 28
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 28
 
 
 
@@ -1846,7 +1846,7 @@ f
 1527      P:000416 P:000416 200042            OR      X0,A                              ;  12 bits, bits 11-0
 1528      P:000417 P:000417 000000            NOP
 1529      P:000418 P:000418 5C0000            MOVE                          A1,Y:0      ; Save the DAC number for a little while
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 29
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 29
 
 
 
@@ -1912,7 +1912,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1582      P:00044A P:00044A 0E146D            JGE     <ERR_SM2
 1583      P:00044B P:00044B 0606A0            REP     #6
 1584      P:00044C P:00044C 200033            LSL     A
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 30
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 30
 
 
 
@@ -1978,7 +1978,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1634      P:000480 P:000480 000000            NOP
 1635                                L_SERCOM
 1636      P:000481 P:000481 60F400            MOVE              #CSB_HIGH,R0            ; Disable the serial command link
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 31
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 31
 
 
 
@@ -2044,7 +2044,7 @@ w output
                             007000
 1683      P:0004A8 P:0004A8 0D0471            JSR     <SER_COM
 1684      P:0004A9 P:0004A9 56F400            MOVE              #(MISC_REG+$0C),A       ; Enable vertical and horizontal scanner
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 32
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 32
 
 
 
@@ -2110,7 +2110,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1740      P:0004D3 P:0004D3 44F400            MOVE              #XMIT_1,X0              ; Only one channel transmits in
                             00F1C7
 1741      P:0004D5 P:0004D5 4C7000            MOVE                          X0,Y:XMT_PXL ;   windowing mode
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 33
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 33
 
 
 
@@ -2176,7 +2176,7 @@ oo
 1789      P:000507 P:000507 000000            NOP
 1790      P:000508 P:000508 5C0300            MOVE                          A1,Y:<NCOLS_CLOCK
 1791      P:000509 P:000509 4C8700  END_SWM   MOVE                          Y:<SXMIT,X0 ; Transmit n channels
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 34
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 34
 
 
 
@@ -2242,7 +2242,7 @@ de
 1840      P:00053C P:00053C 0D04C6            JSR     <SETUP_READ_MODE
 1841      P:00053D P:00053D 0C008F            JMP     <FINISH
 1842      P:00053E P:00053E 014485  CMP_4     CMP     #4,A
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 35
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 35
 
 
 
@@ -2308,7 +2308,7 @@ e
 1885      P:000577 P:000577 44F400            MOVE              #$00F7C0,X0
                             00F7C0
 1886      P:000579 P:000579 4C0700            MOVE                          X0,Y:<SXMIT
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 36
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 36
 
 
 
@@ -2374,7 +2374,7 @@ nce
 1939      P:0005A5 P:0005A5 000000            NOP
 1940      P:0005A6 P:0005A6 200042            OR      X0,A
 1941      P:0005A7 P:0005A7 44F400            MOVE              #$00F000,X0
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  Page 37
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  timIRmisc.asm  Page 37
 
 
 
@@ -2440,7 +2440,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  timIRmisc.asm  
 1995   
 1996                                          IF      @SCP("HOST","ROM")
 1998                                          ENDIF
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 38
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  tim.asm  Page 38
 
 
 
@@ -2506,7 +2506,7 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 3
 2059   
 2060      Y:000000 Y:000000                   DC      END_APPLICATON_Y_MEMORY-@LCV(L)-1
 2061   
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  tim.asm  Page 39
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  tim.asm  Page 39
 
 
 
@@ -2572,7 +2572,7 @@ g mode
 2117                                ;XMIT23 EQU     $00F145 ; Transmit only channel #23
 2118                                ;XMIT31 EQU     $00F1C7 ; Transmit only channel #31
 2119   
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 40
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 40
 
 
 
@@ -2610,464 +2610,574 @@ Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms 
 2151                                ; Voltage tables
 2152      3.100000E+000             CLK_HI    EQU     3.10                              ; High clock voltage
 2153      1.000000E-001             CLK_LO    EQU     0.10                              ; Low clock voltage
-2154      3.310000E+000             CLKmax    EQU     3.31                              ; Maximum clock voltage
-2155      3.310000E+000             VIDEOmax  EQU     3.31                              ; Maximum video board DC bias voltage
+2154      3.300000E+000             CLKmax    EQU     3.3                               ; Maximum clock voltage
+2155      3.300000E+000             VIDEOmax  EQU     3.3                               ; Maximum video board DC bias voltage
 2156      0.000000E+000             ZERO      EQU     0.0                               ; Zero volts for power-on sequence
-2157      1.000000E+000             VSOURCE   EQU     1.0                               ; Source load voltage on the ARC46 video boa
+2157      3.300000E+000             VSOURCE   EQU     3.3                               ; Source load voltage on the ARC46 video boa
 rd
 2158   
-2159                                ; Define the video processor outpout offset values
-2160                                ;OFFSET         EQU     $570            ; -1.6V as calculated with oscope.
-2161                                                                                    ; Consistent with H2RG technical manual. RS 
+2159                                ; Define the video processor output offset values
+2160                                ;10/23/13
+2161                                ;H2RG Binary Search of Bias Voltage. These were chosen by taking 0 sec exposures
+2162                                ;And using the histogram in ImageJ to set the mean to ~80% of full well.
+2163                                ;OFFSET         EQU     $399            ; -2.75V
+2164                                ;OFFSET         EQU     $366            ; -2.875V
+2165                                ;OFFSET         EQU     $3CD            ; -2.625V
+2166                                ;OFFSET         EQU     $3B3            ; -2.6875V
+2167                                ;OFFSET         EQU     $3AE            ; -2.7V
+2168                                ;OFFSET         EQU     $3A4            ; -2.725V
+2169                                ;OFFSET         EQU     $39F            ; -2.7375V
+2170                                ;OFFSET         EQU     $31F            ; -3.05V
+2171                                ;OFFSET         EQU     $312            ; -3.08V
+2172                                ;OFFSET         EQU     $30A            ; -3.1V
+2173                                ;OFFSET         EQU     $2E1            ; -3.2V
+2174      0002AC                    OFFSET    EQU     $2AC                              ; -3.33V
+2175                                ;OFFSET         EQU     $2A6            ; -3.345V
+2177                                ;OLD numbers
+2179                                ;OFFSET         EQU     $570            ; -1.6V as calculated with oscope.
+2180                                                                                    ; Consistent with H2RG technical manual. RS 
 7/21/13
-2162                                ;OFFSET         EQU     $4CD            ; -2.0V, testing. RS 7/21/13
-2163                                ;OFFSET         EQU     $3FF            ; -2.5V, testing. RS 7/21/13
-2164      000333                    OFFSET    EQU     $333                              ; -3.0V, testing. RS 7/24/13
-2165                                ;OFFSET         EQU     $810            ; Good value for a grounded input
-2166                                ;OFFSET         EQU     $8A0            ; Good value for a grounded input
-2167                                ;OFFSET         EQU     $970            ; Good value for H2RG per Bob Leach
-2168   
-2169                                ; DC bias voltages going to the H2RG array
-2170      4.000000E-001             DRAIN     EQU     0.40                              ; Drain node of the output source follower
-2171      0.000000E+000             SUB       EQU     0.00                              ; Multiplexer substrate
-2172      3.300000E+000             VDDA      EQU     3.30                              ; Power supply
-2173      3.300000E+000             VBIASPOWER EQU    3.30                              ; Power for pixel source follower
-2174      2.400000E+000             VBIASGATE EQU     2.40                              ; Bias for pixel source follower
-2175      1.500000E-001             VRESET    EQU     0.15                              ; Detector reset voltage
-2176      5.500000E-001             DSUB      EQU     0.55                              ; Detector substrate
-2177      0.000000E+000             CELLDRAIN EQU     0.00                              ; Drain node of pixel source follower
-2178      3.300000E+000             VDD       EQU     3.30                              ; Power supply
-2179   
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 41
+2181                                ;OFFSET         EQU     $4CD            ; -2.0V, testing. RS 7/21/13
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 41
 
 
 
-2180                                ; Clock board #1 voltage settings
-2181      Y:000014 Y:000014         DACS      DC      END_DACS-DACS-1
-2182      Y:000015 Y:000015                   DC      $2A0080                           ; DAC = unbuffered mode
-2183      Y:000016 Y:000016                   DC      $200100+@CVI(CLK_HI/CLKmax*255)   ; Pin #1, FSYNCB
-2184      Y:000017 Y:000017                   DC      $200200+@CVI(CLK_LO/CLKmax*255)
-2185      Y:000018 Y:000018                   DC      $200400+@CVI(CLK_HI/CLKmax*255)   ; Pin #2, LSYNCB
-2186      Y:000019 Y:000019                   DC      $200800+@CVI(CLK_LO/CLKmax*255)
-2187      Y:00001A Y:00001A                   DC      $202000+@CVI(CLK_HI/CLKmax*255)   ; Pin #3, VCLK
-2188      Y:00001B Y:00001B                   DC      $204000+@CVI(CLK_LO/CLKmax*255)
-2189      Y:00001C Y:00001C                   DC      $208000+@CVI(CLK_HI/CLKmax*255)   ; Pin #4, HCLK
-2190      Y:00001D Y:00001D                   DC      $210000+@CVI(CLK_LO/CLKmax*255)
-2191      Y:00001E Y:00001E                   DC      $220100+@CVI(CLK_HI/CLKmax*255)   ; Pin #5, RESETEN
-2192      Y:00001F Y:00001F                   DC      $220200+@CVI(CLK_LO/CLKmax*255)
-2193      Y:000020 Y:000020                   DC      $220400+@CVI(CLK_HI/CLKmax*255)   ; Pin #6, READEN
-2194      Y:000021 Y:000021                   DC      $220800+@CVI(CLK_LO/CLKmax*255)
-2195   
-2196      Y:000022 Y:000022                   DC      $260100+@CVI(CLK_HI/CLKmax*255)   ; Pin #13, MAINRESETB
-2197      Y:000023 Y:000023                   DC      $260200+@CVI(CLK_LO/CLKmax*255)
-2198      Y:000024 Y:000024                   DC      $260400+@CVI(CLK_HI/CLKmax*255)   ; Pin #14, CSB
-2199      Y:000025 Y:000025                   DC      $260800+@CVI(CLK_LO/CLKmax*255)
-2200      Y:000026 Y:000026                   DC      $262000+@CVI(CLK_HI/CLKmax*255)   ; Pin #15, DATACLK
-2201      Y:000027 Y:000027                   DC      $264000+@CVI(CLK_LO/CLKmax*255)
-2202      Y:000028 Y:000028                   DC      $268000+@CVI(CLK_HI/CLKmax*255)   ; Pin #16, DATAIN
-2203      Y:000029 Y:000029                   DC      $270000+@CVI(CLK_LO/CLKmax*255)
-2204      Y:00002A Y:00002A                   DC      $280100+@CVI(CLK_HI/CLKmax*255)   ; Pin #17, VERTWMEN
-2205      Y:00002B Y:00002B                   DC      $280200+@CVI(CLK_LO/CLKmax*255)
-2206      Y:00002C Y:00002C                   DC      $280400+@CVI(CLK_HI/CLKmax*255)   ; Pin #18, HORIWMEN
-2207      Y:00002D Y:00002D                   DC      $280800+@CVI(CLK_LO/CLKmax*255)
-2208                                END_DACS
-2209   
-2210                                ; Define switch state bits for CLK2 = "bottom" of clock board #1 = channels 0 to 11
-2211      000001                    FSYNCB    EQU     1                                 ; Frame Sync                            Pin 
+2182                                ;OFFSET         EQU     $3FF            ; -2.5V, testing. RS 7/21/13
+2183                                ;OFFSET         EQU     $333            ; -3.0V, testing. RS 7/24/13
+2184                                ;OFFSET         EQU     $810            ; Good value for a grounded input
+2185                                ;OFFSET         EQU     $8A0            ; Good value for a grounded input
+2186                                ;OFFSET         EQU     $970            ; Good value for H2RG per Bob Leach
+2187   
+2188                                ; DC bias voltages going to the H2RG array
+2189      0.000000E+000             DRAIN     EQU     0.00                              ; Drain node of the output source follower
+2190      0.000000E+000             SUB       EQU     0.00                              ; Multiplexer substrate
+2191      3.250000E+000             VDDA      EQU     3.25                              ; Power supply
+2192      3.250000E+000             VBIASPOWER EQU    3.25                              ; Power for pixel source follower
+2193      2.200000E+000             VBIASGATE EQU     2.2                               ; Bias for pixel source follower
+2194      8.800000E-002             VRESET    EQU     0.088                             ; Detector reset voltage
+2195      3.500000E-001             DSUB      EQU     0.35                              ; Detector substrate
+2196      0.000000E+000             CELLDRAIN EQU     0.0                               ; Drain node of pixel source follower
+2197      3.250000E+000             VDD       EQU     3.25                              ; Power supply
+2198   
+2199                                ; Clock board #1 voltage settings
+2200      Y:000014 Y:000014         DACS      DC      END_DACS-DACS-1
+2201      Y:000015 Y:000015                   DC      $2A0080                           ; DAC = unbuffered mode
+2202      Y:000016 Y:000016                   DC      $200100+@CVI(CLK_HI/CLKmax*255)   ; Pin #1, FSYNCB
+2203      Y:000017 Y:000017                   DC      $200200+@CVI(CLK_LO/CLKmax*255)
+2204      Y:000018 Y:000018                   DC      $200400+@CVI(CLK_HI/CLKmax*255)   ; Pin #2, LSYNCB
+2205      Y:000019 Y:000019                   DC      $200800+@CVI(CLK_LO/CLKmax*255)
+2206      Y:00001A Y:00001A                   DC      $202000+@CVI(CLK_HI/CLKmax*255)   ; Pin #3, VCLK
+2207      Y:00001B Y:00001B                   DC      $204000+@CVI(CLK_LO/CLKmax*255)
+2208      Y:00001C Y:00001C                   DC      $208000+@CVI(CLK_HI/CLKmax*255)   ; Pin #4, HCLK
+2209      Y:00001D Y:00001D                   DC      $210000+@CVI(CLK_LO/CLKmax*255)
+2210      Y:00001E Y:00001E                   DC      $220100+@CVI(CLK_HI/CLKmax*255)   ; Pin #5, RESETEN
+2211      Y:00001F Y:00001F                   DC      $220200+@CVI(CLK_LO/CLKmax*255)
+2212      Y:000020 Y:000020                   DC      $220400+@CVI(CLK_HI/CLKmax*255)   ; Pin #6, READEN
+2213      Y:000021 Y:000021                   DC      $220800+@CVI(CLK_LO/CLKmax*255)
+2214   
+2215      Y:000022 Y:000022                   DC      $260100+@CVI(CLK_HI/CLKmax*255)   ; Pin #13, MAINRESETB
+2216      Y:000023 Y:000023                   DC      $260200+@CVI(CLK_LO/CLKmax*255)
+2217      Y:000024 Y:000024                   DC      $260400+@CVI(CLK_HI/CLKmax*255)   ; Pin #14, CSB
+2218      Y:000025 Y:000025                   DC      $260800+@CVI(CLK_LO/CLKmax*255)
+2219      Y:000026 Y:000026                   DC      $262000+@CVI(CLK_HI/CLKmax*255)   ; Pin #15, DATACLK
+2220      Y:000027 Y:000027                   DC      $264000+@CVI(CLK_LO/CLKmax*255)
+2221      Y:000028 Y:000028                   DC      $268000+@CVI(CLK_HI/CLKmax*255)   ; Pin #16, DATAIN
+2222      Y:000029 Y:000029                   DC      $270000+@CVI(CLK_LO/CLKmax*255)
+2223      Y:00002A Y:00002A                   DC      $280100+@CVI(CLK_HI/CLKmax*255)   ; Pin #17, VERTWMEN
+2224      Y:00002B Y:00002B                   DC      $280200+@CVI(CLK_LO/CLKmax*255)
+2225      Y:00002C Y:00002C                   DC      $280400+@CVI(CLK_HI/CLKmax*255)   ; Pin #18, HORIWMEN
+2226      Y:00002D Y:00002D                   DC      $280800+@CVI(CLK_LO/CLKmax*255)
+2227                                END_DACS
+2228   
+2229                                ; Define switch state bits for CLK2 = "bottom" of clock board #1 = channels 0 to 11
+2230      000001                    FSYNCB    EQU     1                                 ; Frame Sync                            Pin 
 #1
-2212      000002                    LSYNCB    EQU     2                                 ; Line Sync                             Pin 
+2231      000002                    LSYNCB    EQU     2                                 ; Line Sync                             Pin 
 #2
-2213      000004                    VCLK      EQU     4                                 ; Vertical Clock                        Pin 
+2232      000004                    VCLK      EQU     4                                 ; Vertical Clock                        Pin 
 #3
-2214      000008                    HCLK      EQU     8                                 ; Horizontal (fast pixel) Clock         Pin 
+2233      000008                    HCLK      EQU     8                                 ; Horizontal (fast pixel) Clock         Pin 
 #4
-2215      000010                    RESETEN   EQU     $10                               ; Reset enable                          Pin 
+2234      000010                    RESETEN   EQU     $10                               ; Reset enable                          Pin 
 #5
-2216      000020                    READEN    EQU     $20                               ; Read enable                           Pin 
+2235      000020                    READEN    EQU     $20                               ; Read enable                           Pin 
 #6
-2217   
-2218                                ; Define switch state bits for CLK3 = "top" of clock board #1 = channels 12 to 23
-2219      000001                    MAINRESETB EQU    1                                 ; Reset the serial command register     Pin 
-#13
-2220      000002                    CSB       EQU     2                                 ; Serial Chip Select Bar                Pin 
-#14
-2221      000004                    DATACLK   EQU     4                                 ; Serial register clock input           Pin 
-#15
-2222      000008                    DATAIN    EQU     8                                 ; Serial register data input            Pin 
-#16
-2223      000010                    VERTWMEN  EQU     $10                               ; Enable vertical windowing mode        Pin 
-#17
-2224      000020                    HORIWMEN  EQU     $20                               ; Enable horizontal windowing mode      Pin 
-#18
-2225   
-2226      000008                    XFER      EQU     8                                 ; Bit #3 = A/D data -> FIFO     (high going 
-edge)
-2227      000000                    X___      EQU     0
-2228      000000                    START_AD  EQU     0                                 ; Bit #2 = A/D Convert          (low going e
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 42
-
-
-
-dge to start conversion)
-2229      000004                    S_______  EQU     4
-2230      000000                    RESET_INTG EQU    0                                 ; Bit #1 = Reset Integrator     (=0 to reset
-)
-2231      000002                    R_________ EQU    2
-2232                                 ENABLE_INTG
-2233      000000                              EQU     0                                 ; Bit #0 = Integrate            (=0 to integ
-rate)
-2234                                 E__________
-2235      000001                              EQU     1
 2236   
-2237      00202B                    HCLK_H    EQU     CLK2+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN
-2238      002023                    HCLK_L    EQU     CLK2+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2239   
-2240                                ; Copy of the clocking bit definition for easy reference
-2241                                ;       DC      CLK2+DELAY+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
-2242                                ;       DC      CLK3+DELAY+MAINRESETB+CSB+DATACLK+DATAIN+VERTWMEN+HORIWMEN
-2243   
-2244                                FRAME_INIT
-2245      Y:00002E Y:00002E                   DC      END_FRAME_INIT-FRAME_INIT-1
-2246      Y:00002F Y:00002F                   DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2247      Y:000030 Y:000030                   DC      CLK2+DLY1+000000+LSYNCB+0000+0000+0000000+READEN ; Pulse FSYNCB low
-2248      Y:000031 Y:000031                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2249                                END_FRAME_INIT
-2250   
-2251                                CLOCK_ROW
-2252      Y:000032 Y:000032                   DC      END_CLOCK_ROW-CLOCK_ROW-1
-2253      Y:000033 Y:000033                   DC      CLK2+DLY1+FSYNCB+000000+VCLK+0000+0000000+READEN ; Pulse LSYNC low, VCLK hi
-2254      Y:000034 Y:000034                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN ; Return to defaults
-2255                                END_CLOCK_ROW
-2256   
-2257                                CLOCK_ROW_RESET
-2258      Y:000035 Y:000035                   DC      END_CLOCK_ROW_RESET-CLOCK_ROW_RESET-1
-2259      Y:000036 Y:000036                   DC      CLK2+DLY1+FSYNCB+000000+VCLK+0000+RESETEN+000000 ; Pulse LSYNC low, VCLK HI
-2260      Y:000037 Y:000037                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+RESETEN+000000 ; Return to defaults
-2261                                END_CLOCK_ROW_RESET
+2237                                ; Define switch state bits for CLK3 = "top" of clock board #1 = channels 12 to 23
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 42
+
+
+
+2238      000001                    MAINRESETB EQU    1                                 ; Reset the serial command register     Pin 
+#13
+2239      000002                    CSB       EQU     2                                 ; Serial Chip Select Bar                Pin 
+#14
+2240      000004                    DATACLK   EQU     4                                 ; Serial register clock input           Pin 
+#15
+2241      000008                    DATAIN    EQU     8                                 ; Serial register data input            Pin 
+#16
+2242      000010                    VERTWMEN  EQU     $10                               ; Enable vertical windowing mode        Pin 
+#17
+2243      000020                    HORIWMEN  EQU     $20                               ; Enable horizontal windowing mode      Pin 
+#18
+2244   
+2245      000008                    XFER      EQU     8                                 ; Bit #3 = A/D data -> FIFO     (high going 
+edge)
+2246      000000                    X___      EQU     0
+2247      000000                    START_AD  EQU     0                                 ; Bit #2 = A/D Convert          (low going e
+dge to start conversion)
+2248      000004                    S_______  EQU     4
+2249      000000                    RESET_INTG EQU    0                                 ; Bit #1 = Reset Integrator     (=0 to reset
+)
+2250      000002                    R_________ EQU    2
+2251                                 ENABLE_INTG
+2252      000000                              EQU     0                                 ; Bit #0 = Integrate            (=0 to integ
+rate)
+2253                                 E__________
+2254      000001                              EQU     1
+2255   
+2256      00202B                    HCLK_H    EQU     CLK2+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN
+2257      002023                    HCLK_L    EQU     CLK2+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2258   
+2259                                ; Copy of the clocking bit definition for easy reference
+2260                                ;       DC      CLK2+DELAY+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
+2261                                ;       DC      CLK3+DELAY+MAINRESETB+CSB+DATACLK+DATAIN+VERTWMEN+HORIWMEN
 2262   
-2263                                OVERCLOCK_ROW
-2264      Y:000038 Y:000038                   DC      END_OVERCLOCK_ROW-OVERCLOCK_ROW-1
-2265      Y:000039 Y:000039                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2266      Y:00003A Y:00003A                   DC      CLK2+DLY1+FSYNCB+LSYNCB+VCLK+0000+0000000+READEN ; Pulse VCLK hi
-2267      Y:00003B Y:00003B                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2268                                ;       DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN        ; This is the end of the
+2263                                FRAME_INIT
+2264      Y:00002E Y:00002E                   DC      END_FRAME_INIT-FRAME_INIT-1
+2265      Y:00002F Y:00002F                   DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2266      Y:000030 Y:000030                   DC      CLK2+DLY1+000000+LSYNCB+0000+0000+0000000+READEN ; Pulse FSYNCB low
+2267      Y:000031 Y:000031                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2268                                END_FRAME_INIT
+2269   
+2270                                CLOCK_ROW
+2271      Y:000032 Y:000032                   DC      END_CLOCK_ROW-CLOCK_ROW-1
+2272      Y:000033 Y:000033                   DC      CLK2+DLY1+FSYNCB+000000+VCLK+0000+0000000+READEN ; Pulse LSYNC low, VCLK hi
+2273      Y:000034 Y:000034                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN ; Return to defaults
+2274                                END_CLOCK_ROW
+2275   
+2276                                CLOCK_ROW_RESET
+2277      Y:000035 Y:000035                   DC      END_CLOCK_ROW_RESET-CLOCK_ROW_RESET-1
+2278      Y:000036 Y:000036                   DC      CLK2+DLY1+FSYNCB+000000+VCLK+0000+RESETEN+000000 ; Pulse LSYNC low, VCLK HI
+2279      Y:000037 Y:000037                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+RESETEN+000000 ; Return to defaults
+2280                                END_CLOCK_ROW_RESET
+2281   
+2282                                OVERCLOCK_ROW
+2283      Y:000038 Y:000038                   DC      END_OVERCLOCK_ROW-OVERCLOCK_ROW-1
+2284      Y:000039 Y:000039                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2285      Y:00003A Y:00003A                   DC      CLK2+DLY1+FSYNCB+LSYNCB+VCLK+0000+0000000+READEN ; Pulse VCLK hi
+2286      Y:00003B Y:00003B                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2287                                ;       DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN        ; This is the end of the
  readout, put
-2269                                ;       DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+RESETEN+000000        ;   the H2RG in reset mo
+2288                                ;       DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+RESETEN+000000        ;   the H2RG in reset mo
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 43
+
+
+
 de
-2270                                END_OVERCLOCK_ROW
-2271   
-2272                                SKIP_ROW
-2273      Y:00003C Y:00003C                   DC      END_SKIP_ROW-SKIP_ROW-1
-2274      Y:00003D Y:00003D                   DC      CLK2+DLY1+FSYNCB+000000+VCLK+0000+0000000+READEN ; Pulse VCLK hi and LSYNC low
-2275      Y:00003E Y:00003E                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2276                                END_SKIP_ROW
-2277   
-2278                                SKIP_COL
-2279      Y:00003F Y:00003F                   DC      END_SKIP_COL-SKIP_COL-1
-2280      Y:000040 Y:000040                   DC      $0A0000+HCLK_L
-2281      Y:000041 Y:000041                   DC      $0A0000+HCLK_H
-2282                                END_SKIP_COL
-2283   
-2284                                ; Clock the multiplexer, integrate the video signal, A/D convert and transmit
-2285                                CLK_COL
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 43
-
-
-
-2286      Y:000042 Y:000042                   DC      END_CLK_COL-CLK_COL-1
-2287      Y:000043 Y:000043                   DC      HCLK_L                            ; HCLK low
-2288      Y:000044 Y:000044                   DC      VID0+$080000+X___+S_______+RESET_INTG+E__________ ; Reset integrator
-2289      Y:000045 Y:000045                   DC      VID0+$060000+X___+S_______+R_________+E__________ ; Settling time
-2290      Y:000046 Y:000046                   DC      VID0+$140000+X___+S_______+R_________+ENABLE_INTG ; Integrate
-2291      Y:000047 Y:000047                   DC      HCLK_H                            ; HCLK High
-2292      Y:000048 Y:000048                   DC      VID0+$120000+X___+S_______+R_________+ENABLE_INTG ; Integrate
-2293      Y:000049 Y:000049                   DC      VID0+$010000+X___+S_______+R_________+E__________ ; Settling time
-2294      Y:00004A Y:00004A                   DC      VID0+$000000+X___+START_AD+R_________+E__________ ; Start A/D conversion
-2295      Y:00004B Y:00004B                   DC      VID0+$0B0000+X___+S_______+R_________+E__________ ; A/D conversion time
-2296      Y:00004C Y:00004C                   DC      VID0+$000000+XFER+S_______+R_________+E__________ ; A/D data--> FIFO
-2297      Y:00004D Y:00004D                   DC      VID0+$000000+X___+S_______+R_________+E__________
-2298      Y:00004E Y:00004E         XMT_PXL   DC      XMIT_32                           ; Transmit pixels
-2299                                END_CLK_COL
-2300      Y:00004F Y:00004F                   DC      7,XMIT15,7,XMIT23,7,XMIT31,7      ; SXMITs in 4-channel mode
-2301                                END_CLK_COL_4
+2289                                END_OVERCLOCK_ROW
+2290   
+2291                                SKIP_ROW
+2292      Y:00003C Y:00003C                   DC      END_SKIP_ROW-SKIP_ROW-1
+2293      Y:00003D Y:00003D                   DC      CLK2+DLY1+FSYNCB+000000+VCLK+0000+0000000+READEN ; Pulse VCLK hi and LSYNC low
+2294      Y:00003E Y:00003E                   DC      CLK2+DLY1+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2295                                END_SKIP_ROW
+2296   
+2297                                SKIP_COL
+2298      Y:00003F Y:00003F                   DC      END_SKIP_COL-SKIP_COL-1
+2299      Y:000040 Y:000040                   DC      $0A0000+HCLK_L
+2300      Y:000041 Y:000041                   DC      $0A0000+HCLK_H
+2301                                END_SKIP_COL
 2302   
-2303                                ; Here is an alternative syntax for the same thing:
-2304                                ; Video processor bit definitions
-2305                                ;       Bit #3 = Move A/D data to FIFO  (high going edge)
-2306                                ;       Bit #2 = A/D Convert            (low going edge to start conversion)
-2307                                ;       Bit #1 = Reset Integrator       (=0 to reset)
-2308                                ;       Bit #0 = Integrate              (=0 to integrate)
-2309   
-2310                                ; Execute the global reset function
-2311                                GLOBAL_RESET
-2312      Y:000056 Y:000056                   DC      END_GLOBAL_RESET-GLOBAL_RESET-1
-2313      Y:000057 Y:000057                   DC      CLK2+$A00000+FSYNCB+LSYNCB+0000+0000+RESETEN+000000 ; Hold RESETEN high for 20
+2303                                ; Clock the multiplexer, integrate the video signal, A/D convert and transmit
+2304                                CLK_COL
+2305      Y:000042 Y:000042                   DC      END_CLK_COL-CLK_COL-1
+2306      Y:000043 Y:000043                   DC      HCLK_L                            ; HCLK low
+2307      Y:000044 Y:000044                   DC      VID0+$080000+X___+S_______+RESET_INTG+E__________ ; Reset integrator
+2308      Y:000045 Y:000045                   DC      VID0+$060000+X___+S_______+R_________+E__________ ; Settling time
+2309      Y:000046 Y:000046                   DC      VID0+$140000+X___+S_______+R_________+ENABLE_INTG ; Integrate
+2310      Y:000047 Y:000047                   DC      HCLK_H                            ; HCLK High
+2311      Y:000048 Y:000048                   DC      VID0+$120000+X___+S_______+R_________+ENABLE_INTG ; Integrate
+2312      Y:000049 Y:000049                   DC      VID0+$010000+X___+S_______+R_________+E__________ ; Settling time
+2313      Y:00004A Y:00004A                   DC      VID0+$000000+X___+START_AD+R_________+E__________ ; Start A/D conversion
+2314      Y:00004B Y:00004B                   DC      VID0+$0B0000+X___+S_______+R_________+E__________ ; A/D conversion time
+2315      Y:00004C Y:00004C                   DC      VID0+$000000+XFER+S_______+R_________+E__________ ; A/D data--> FIFO
+2316      Y:00004D Y:00004D                   DC      VID0+$000000+X___+S_______+R_________+E__________
+2317      Y:00004E Y:00004E         XMT_PXL   DC      XMIT_32                           ; Transmit pixels
+2318                                END_CLK_COL
+2319      Y:00004F Y:00004F                   DC      7,XMIT15,7,XMIT23,7,XMIT31,7      ; SXMITs in 4-channel mode
+2320                                END_CLK_COL_4
+2321   
+2322                                ; Here is an alternative syntax for the same thing:
+2323                                ; Video processor bit definitions
+2324                                ;       Bit #3 = Move A/D data to FIFO  (high going edge)
+2325                                ;       Bit #2 = A/D Convert            (low going edge to start conversion)
+2326                                ;       Bit #1 = Reset Integrator       (=0 to reset)
+2327                                ;       Bit #0 = Integrate              (=0 to integrate)
+2328   
+2329                                ; Execute the global reset function
+2330                                GLOBAL_RESET
+2331      Y:000056 Y:000056                   DC      END_GLOBAL_RESET-GLOBAL_RESET-1
+2332      Y:000057 Y:000057                   DC      CLK2+$A00000+FSYNCB+LSYNCB+0000+0000+RESETEN+000000 ; Hold RESETEN high for 20
  microsec
-2314      Y:000058 Y:000058                   DC      CLK2+$A00000+FSYNCB+LSYNCB+0000+0000+RESETEN+000000
-2315      Y:000059 Y:000059                   DC      CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2316                                END_GLOBAL_RESET
-2317   
-2318                                ; Advance the pixel clock without A/D conversions at the beginning of each line
-2319                                FIRST_HCLKS
-2320      Y:00005A Y:00005A                   DC      END_FIRST_HCLKS-FIRST_HCLKS-1
-2321      Y:00005B Y:00005B                   DC      CLK2+$240000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN ; Cycle HCLK
-2322      Y:00005C Y:00005C                   DC      CLK2+$240000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2323      Y:00005D Y:00005D                   DC      CLK2+$240000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN ; Cycle HCLK
-2324      Y:00005E Y:00005E                   DC      CLK2+$040000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2325                                END_FIRST_HCLKS
-2326   
-2327                                ; Bring HCLK low at the end of each line
-2328                                LAST_HCLKS
-2329      Y:00005F Y:00005F                   DC      END_LAST_HCLKS-LAST_HCLKS-1
-2330      Y:000060 Y:000060                   DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2331      Y:000061 Y:000061                   DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2332      Y:000062 Y:000062                   DC      CLK2+DLY2+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2333                                END_LAST_HCLKS
-2334   
-2335                                ; One microsec delay
-2336                                ONE_MICROSEC_DELAY
-2337      Y:000063 Y:000063                   DC      END_ONE_MICROSEC_DELAY-ONE_MICROSEC_DELAY-1
-2338      Y:000064 Y:000064                   DC      CLK2+$0B0000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2339      Y:000065 Y:000065                   DC      CLK2+$0B0000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2340      Y:000066 Y:000066                   DC      CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
-2341                                END_ONE_MICROSEC_DELAY
-2342   
-2343                                ; The remaining commands are for the serial interface
-2344                                ; Heavily reworked by RS & LS 7/19/13. See coorespondence with Charles Lockhart
+2333      Y:000058 Y:000058                   DC      CLK2+$A00000+FSYNCB+LSYNCB+0000+0000+RESETEN+000000
+2334      Y:000059 Y:000059                   DC      CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2335                                END_GLOBAL_RESET
+2336   
+2337                                ; Advance the pixel clock without A/D conversions at the beginning of each line
+2338                                FIRST_HCLKS
+2339      Y:00005A Y:00005A                   DC      END_FIRST_HCLKS-FIRST_HCLKS-1
+2340      Y:00005B Y:00005B                   DC      CLK2+$240000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN ; Cycle HCLK
+2341      Y:00005C Y:00005C                   DC      CLK2+$240000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2342      Y:00005D Y:00005D                   DC      CLK2+$240000+FSYNCB+LSYNCB+0000+HCLK+0000000+READEN ; Cycle HCLK
+2343      Y:00005E Y:00005E                   DC      CLK2+$040000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2344                                END_FIRST_HCLKS
 2345   
-2346                                CSB_LOW
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 44
+2346                                ; Bring HCLK low at the end of each line
+2347                                LAST_HCLKS
+2348      Y:00005F Y:00005F                   DC      END_LAST_HCLKS-LAST_HCLKS-1
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 44
 
 
 
-2347      Y:000067 Y:000067                   DC      END_CSB_LOW-CSB_LOW-1
-2348      Y:000068 Y:000068                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+000000+000000
-2349      Y:000069 Y:000069                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2350      Y:00006A Y:00006A                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2351      Y:00006B Y:00006B                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2352      Y:00006C Y:00006C                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
-2353      Y:00006D Y:00006D                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
-2354      Y:00006E Y:00006E                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
-2355                                END_CSB_LOW
-2356   
-2357                                CSB_HIGH
-2358      Y:00006F Y:00006F                   DC      END_CSB_HIGH-CSB_HIGH-1
-2359      Y:000070 Y:000070                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+000000+0000000
-2360      Y:000071 Y:000071                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
-2361      Y:000072 Y:000072                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2362      Y:000073 Y:000073                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2363      Y:000074 Y:000074                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+000000+0000000
-2364                                END_CSB_HIGH
-2365   
-2366                                CLOCK_SERIAL_ONE
-2367      Y:000075 Y:000075                   DC      END_CLOCK_SERIAL_ONE-CLOCK_SERIAL_ONE-1
-2368                                ;       DC      CLK2+DLYR+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
-2369      Y:000076 Y:000076                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+0000000+000000
-2370      Y:000077 Y:000077                   DC      CLK2+DLYR+FSYNCB+LSYNCB+VCLK+0000+0000000+000000
-2371                                ;       DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
-2372                                ;       DC      CLK3+DLYR+MAINRESETB+000+DATACLK+DATAIN+00000000+00000000
-2373                                END_CLOCK_SERIAL_ONE
-2374   
-2375                                CLOCK_SERIAL_ZERO
-2376      Y:000078 Y:000078                   DC      END_CLOCK_SERIAL_ZERO-CLOCK_SERIAL_ZERO-1
-2377                                ;       DC      CLK2+DLYR+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
-2378      Y:000079 Y:000079                   DC      CLK2+DLYR+000000+LSYNCB+0000+0000+0000000+000000
-2379      Y:00007A Y:00007A                   DC      CLK2+DLYR+000000+LSYNCB+VCLK+0000+0000000+000000
-2380                                ;       DC      CLK3+DLYR+MAINRESETB+000+0000000+000000+00000000+00000000
-2381                                ;       DC      CLK3+DLYR+MAINRESETB+000+DATACLK+000000+00000000+00000000
-2382                                END_CLOCK_SERIAL_ZERO
-2383   
-2384                                ; Reset all the internal registers to default values
-2385                                RST_INTERNAL_REGISTERS
-2386      Y:00007B Y:00007B                   DC      END_RST_INTERNAL_REGISTERS-RST_INTERNAL_REGISTERS-1
-2387      Y:00007C Y:00007C                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2388      Y:00007D Y:00007D                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+0000+000000
-2389      Y:00007E Y:00007E                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2390      Y:00007F Y:00007F                   DC      CLK3+DLY2+0000000000+CSB+0000000+DATAIN+00000000+00000000
-2391      Y:000080 Y:000080                   DC      CLK3+DLY2+0000000000+CSB+0000000+DATAIN+00000000+00000000
-2392      Y:000081 Y:000081                   DC      CLK3+DLY0+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2393      Y:000082 Y:000082                   DC      CLK3+DLY0+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2394      Y:000083 Y:000083                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+0000+000000
-2395                                END_RST_INTERNAL_REGISTERS
-2396   
-2397                                ; Enable and disable native H2RG windowing mode
-2398                                ENABLE_WM
-2399      Y:000084 Y:000084                   DC      END_ENABLE_WM-ENABLE_WM-1
-2400      Y:000085 Y:000085                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+VERTWMEN+HORIWMEN
-2401                                END_ENABLE_WM
+2349      Y:000060 Y:000060                   DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2350      Y:000061 Y:000061                   DC      CLK2+DLY0+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2351      Y:000062 Y:000062                   DC      CLK2+DLY2+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2352                                END_LAST_HCLKS
+2353   
+2354                                ; One microsec delay
+2355                                ONE_MICROSEC_DELAY
+2356      Y:000063 Y:000063                   DC      END_ONE_MICROSEC_DELAY-ONE_MICROSEC_DELAY-1
+2357      Y:000064 Y:000064                   DC      CLK2+$0B0000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2358      Y:000065 Y:000065                   DC      CLK2+$0B0000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2359      Y:000066 Y:000066                   DC      CLK2+$000000+FSYNCB+LSYNCB+0000+0000+0000000+READEN
+2360                                END_ONE_MICROSEC_DELAY
+2361   
+2362                                ; The remaining commands are for the serial interface
+2363                                ; Heavily reworked by RS & LS 7/19/13. See coorespondence with Charles Lockhart
+2364   
+2365                                CSB_LOW
+2366      Y:000067 Y:000067                   DC      END_CSB_LOW-CSB_LOW-1
+2367      Y:000068 Y:000068                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+000000+000000
+2368      Y:000069 Y:000069                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2369      Y:00006A Y:00006A                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2370      Y:00006B Y:00006B                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2371      Y:00006C Y:00006C                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
+2372      Y:00006D Y:00006D                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
+2373      Y:00006E Y:00006E                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
+2374                                END_CSB_LOW
+2375   
+2376                                CSB_HIGH
+2377      Y:00006F Y:00006F                   DC      END_CSB_HIGH-CSB_HIGH-1
+2378      Y:000070 Y:000070                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+000000+0000000
+2379      Y:000071 Y:000071                   DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
+2380      Y:000072 Y:000072                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2381      Y:000073 Y:000073                   DC      CLK3+DLYR+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2382      Y:000074 Y:000074                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+000000+0000000
+2383                                END_CSB_HIGH
+2384   
+2385                                CLOCK_SERIAL_ONE
+2386      Y:000075 Y:000075                   DC      END_CLOCK_SERIAL_ONE-CLOCK_SERIAL_ONE-1
+2387                                ;       DC      CLK2+DLYR+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
+2388      Y:000076 Y:000076                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+0000000+000000
+2389      Y:000077 Y:000077                   DC      CLK2+DLYR+FSYNCB+LSYNCB+VCLK+0000+0000000+000000
+2390                                ;       DC      CLK3+DLYR+MAINRESETB+000+0000000+DATAIN+00000000+00000000
+2391                                ;       DC      CLK3+DLYR+MAINRESETB+000+DATACLK+DATAIN+00000000+00000000
+2392                                END_CLOCK_SERIAL_ONE
+2393   
+2394                                CLOCK_SERIAL_ZERO
+2395      Y:000078 Y:000078                   DC      END_CLOCK_SERIAL_ZERO-CLOCK_SERIAL_ZERO-1
+2396                                ;       DC      CLK2+DLYR+FSYNCB+LSYNCB+VCLK+HCLK+RESETEN+READEN
+2397      Y:000079 Y:000079                   DC      CLK2+DLYR+000000+LSYNCB+0000+0000+0000000+000000
+2398      Y:00007A Y:00007A                   DC      CLK2+DLYR+000000+LSYNCB+VCLK+0000+0000000+000000
+2399                                ;       DC      CLK3+DLYR+MAINRESETB+000+0000000+000000+00000000+00000000
+2400                                ;       DC      CLK3+DLYR+MAINRESETB+000+DATACLK+000000+00000000+00000000
+2401                                END_CLOCK_SERIAL_ZERO
 2402   
-2403                                DISABLE_WM
-2404      Y:000086 Y:000086                   DC      END_DISABLE_WM-DISABLE_WM-1
-2405      Y:000087 Y:000087                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
-2406                                END_DISABLE_WM
-2407   
-2408      Y:000088 Y:000088         DC_BIASES DC      END_DC_BIASES-DC_BIASES-1
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 45
+2403                                ; Reset all the internal registers to default values
+2404                                RST_INTERNAL_REGISTERS
+2405      Y:00007B Y:00007B                   DC      END_RST_INTERNAL_REGISTERS-RST_INTERNAL_REGISTERS-1
+2406      Y:00007C Y:00007C                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2407      Y:00007D Y:00007D                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+0000+000000
+2408      Y:00007E Y:00007E                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2409      Y:00007F Y:00007F                   DC      CLK3+DLY2+0000000000+CSB+0000000+DATAIN+00000000+00000000
+2410      Y:000080 Y:000080                   DC      CLK3+DLY2+0000000000+CSB+0000000+DATAIN+00000000+00000000
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 45
 
 
 
-2409   
-2410                                ; Integrator gain and FIFO reset
-2411                                ;       DC      $0c3001                 ; Integrate 1, R = 4k, Low gain, Slow
-2412      Y:000089 Y:000089                   DC      $0c3000                           ; Integrate 2, R = 1k, High gain, Fast
-2413      Y:00008A Y:00008A                   DC      $1c3000                           ; Integrate 2, R = 1k, High gain, Fast
-2414      Y:00008B Y:00008B                   DC      $2c3000                           ; Integrate 2, R = 1k, High gain, Fast
-2415      Y:00008C Y:00008C                   DC      $3c3000                           ; Integrate 2, R = 1k, High gain, Fast
-2416      Y:00008D Y:00008D                   DC      $0c1000                           ; Reset image data FIFOs
-2417   
-2418                                ;       DC      $0d2000                 ; Low  16 A/D bits
-2419      Y:00008E Y:00008E                   DC      $0c2000                           ; High 16 A/D bits to backplane (hardware de
-fault)
-2420      Y:00008F Y:00008F                   DC      $1c2000                           ; High 16 A/D bits to backplane (hardware de
-fault)
-2421      Y:000090 Y:000090                   DC      $2c2000                           ; High 16 A/D bits to backplane (hardware de
-fault)
-2422   
-2423                                ;       DC      $0f2000                 ; WARP On
-2424      Y:000091 Y:000091                   DC      $0e2000                           ; WARP Off
-2425      Y:000092 Y:000092                   DC      $1e2000                           ; WARP Off
-2426      Y:000093 Y:000093                   DC      $2e2000                           ; WARP Off
-2427      Y:000094 Y:000094                   DC      $3e2000                           ; WARP Off
+2411      Y:000081 Y:000081                   DC      CLK3+DLY0+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2412      Y:000082 Y:000082                   DC      CLK3+DLY0+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2413      Y:000083 Y:000083                   DC      CLK2+DLYR+FSYNCB+LSYNCB+0000+0000+0000+000000
+2414                                END_RST_INTERNAL_REGISTERS
+2415   
+2416                                ; Enable and disable native H2RG windowing mode
+2417                                ENABLE_WM
+2418      Y:000084 Y:000084                   DC      END_ENABLE_WM-ENABLE_WM-1
+2419      Y:000085 Y:000085                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+VERTWMEN+HORIWMEN
+2420                                END_ENABLE_WM
+2421   
+2422                                DISABLE_WM
+2423      Y:000086 Y:000086                   DC      END_DISABLE_WM-DISABLE_WM-1
+2424      Y:000087 Y:000087                   DC      CLK3+DLY2+MAINRESETB+CSB+0000000+DATAIN+00000000+00000000
+2425                                END_DISABLE_WM
+2426   
+2427      Y:000088 Y:000088         DC_BIASES DC      END_DC_BIASES-DC_BIASES-1
 2428   
-2429                                ; Note that pins #17 and #33 shuold be used to higher currents because they
-2430                                ;   have 100 ohm filtering resistors, versus 1k on the other pins.
-2431   
-2432                                ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
-2433      Y:000095 Y:000095         DC_BIAS   DC      $0c4000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #17
-2434      Y:000096 Y:000096                   DC      $0c8000+@CVI((SUB+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #33
-2435      Y:000097 Y:000097                   DC      $0cc000+@CVI((ZERO+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #16
+2429                                ; Integrator gain and FIFO reset
+2430                                ;       DC      $0c3001                 ; Integrate 1, R = 4k, Low gain, Slow
+2431      Y:000089 Y:000089                   DC      $0c3000                           ; Integrate 2, R = 1k, High gain, Fast
+2432      Y:00008A Y:00008A                   DC      $1c3000                           ; Integrate 2, R = 1k, High gain, Fast
+2433      Y:00008B Y:00008B                   DC      $2c3000                           ; Integrate 2, R = 1k, High gain, Fast
+2434      Y:00008C Y:00008C                   DC      $3c3000                           ; Integrate 2, R = 1k, High gain, Fast
+2435      Y:00008D Y:00008D                   DC      $0c1000                           ; Reset image data FIFOs
 2436   
-2437                                ; Unipolar 0 to 5 volts output voltages, video board #0
-2438      Y:000098 Y:000098                   DC      $0d0000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #32
-2439      Y:000099 Y:000099                   DC      $0d4000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #15
-2440      Y:00009A Y:00009A                   DC      $0d8000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #31
-2441      Y:00009B Y:00009B                   DC      $0dc000+@CVI(VIDEOmax/VIDEOmax*4095) ; P2, Pin #14  External source follower l
-oad
-2442   
-2443                                ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
-2444      Y:00009C Y:00009C                   DC      $1c4000+@CVI((VDDA+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #17
-2445      Y:00009D Y:00009D                   DC      $1c8000+@CVI((VBIASPOWER+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #33
-2446      Y:00009E Y:00009E                   DC      $1cc000+@CVI((VBIASGATE+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #16
+2437                                ;       DC      $0d2000                 ; Low  16 A/D bits
+2438      Y:00008E Y:00008E                   DC      $0c2000                           ; High 16 A/D bits to backplane (hardware de
+fault)
+2439      Y:00008F Y:00008F                   DC      $1c2000                           ; High 16 A/D bits to backplane (hardware de
+fault)
+2440      Y:000090 Y:000090                   DC      $2c2000                           ; High 16 A/D bits to backplane (hardware de
+fault)
+2441   
+2442                                ;       DC      $0f2000                 ; WARP On
+2443      Y:000091 Y:000091                   DC      $0e2000                           ; WARP Off
+2444      Y:000092 Y:000092                   DC      $1e2000                           ; WARP Off
+2445      Y:000093 Y:000093                   DC      $2e2000                           ; WARP Off
+2446      Y:000094 Y:000094                   DC      $3e2000                           ; WARP Off
 2447   
-2448                                ; Unipolar 0 to 5 volts output voltages, video board #1
-2449      Y:00009F Y:00009F                   DC      $1d0000+@CVI(VRESET/VIDEOmax*4095) ; P2, Pin #32
-2450      Y:0000A0 Y:0000A0                   DC      $1d4000+@CVI(DSUB/VIDEOmax*4095)  ; P2, Pin #15
-2451      Y:0000A1 Y:0000A1                   DC      $1d8000+@CVI(CELLDRAIN/VIDEOmax*4095) ; P2, Pin #31
-2452      Y:0000A2 Y:0000A2                   DC      $1dc000+@CVI(VIDEOmax/VIDEOmax*4095) ; P2, Pin #14  External source follower l
-oad
-2453   
-2454                                ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
-2455      Y:0000A3 Y:0000A3                   DC      $2c4000+@CVI((VDD+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #17
-2456      Y:0000A4 Y:0000A4                   DC      $2c8000+@CVI((ZERO+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #33
-2457      Y:0000A5 Y:0000A5                   DC      $2cc000+@CVI((ZERO+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #162
-2458   
-2459                                ; Unipolar 0 to 5 volts output voltages, video board #2
-2460      Y:0000A6 Y:0000A6                   DC      $2d0000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #32
-2461      Y:0000A7 Y:0000A7                   DC      $2d4000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #15
-2462      Y:0000A8 Y:0000A8                   DC      $2d8000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #31
-2463      Y:0000A9 Y:0000A9                   DC      $2dc000+@CVI(VIDEOmax/VIDEOmax*4095) ; P2, Pin #14  External source follower l
-oad
-2464   
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 46
+2448                                ; Note that pins #17 and #33 shuold be used to higher currents because they
+2449                                ;   have 100 ohm filtering resistors, versus 1k on the other pins.
+2450   
+2451                                ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
+2452      Y:000095 Y:000095         DC_BIAS   DC      $0c4000+@CVI((DRAIN+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #17
+2453      Y:000096 Y:000096                   DC      $0c8000+@CVI((SUB+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #33
+2454      Y:000097 Y:000097                   DC      $0cc000+@CVI((ZERO+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #16
+2455   
+2456                                ; Unipolar 0 to 5 volts output voltages, video board #0
+2457      Y:000098 Y:000098                   DC      $0d0000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #32
+2458      Y:000099 Y:000099                   DC      $0d4000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #15
+2459      Y:00009A Y:00009A                   DC      $0d8000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #31
+2460      Y:00009B Y:00009B                   DC      $0dc000+@CVI(VSOURCE/VIDEOmax*4095) ; P2, Pin #14  External source follower lo
+ad
+2461   
+2462                                ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
+2463      Y:00009C Y:00009C                   DC      $1c4000+@CVI((VDDA+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #17
+2464      Y:00009D Y:00009D                   DC      $1c8000+@CVI((VBIASPOWER+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #33
+2465      Y:00009E Y:00009E                   DC      $1cc000+@CVI((VBIASGATE+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #16
+2466   
+2467                                ; Unipolar 0 to 5 volts output voltages, video board #1
+2468      Y:00009F Y:00009F                   DC      $1d0000+@CVI(VRESET/VIDEOmax*4095) ; P2, Pin #32
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 46
 
 
 
-2465                                ; Unipolar 0 to 5 volts output voltages, video board #3
-2466      Y:0000AA Y:0000AA                   DC      $3d0000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #32
-2467      Y:0000AB Y:0000AB                   DC      $3d4000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #15
-2468      Y:0000AC Y:0000AC                   DC      $3d8000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #31
-2469      Y:0000AD Y:0000AD                   DC      $3dc000+@CVI(VIDEOmax/VIDEOmax*4095) ; P2, Pin #14  External source follower l
-oad
-2470   
-2471                                ; Video processor offset voltages
-2472      Y:0000AE Y:0000AE                   DC      $0e0000+OFFSET                    ; Output #0, video board #0
-2473      Y:0000AF Y:0000AF                   DC      $0e4000+OFFSET                    ; Output #1
-2474      Y:0000B0 Y:0000B0                   DC      $0e8000+OFFSET                    ; Output #2
-2475      Y:0000B1 Y:0000B1                   DC      $0ec000+OFFSET                    ; Output #3
-2476      Y:0000B2 Y:0000B2                   DC      $0f0000+OFFSET                    ; Output #4
-2477      Y:0000B3 Y:0000B3                   DC      $0f4000+OFFSET                    ; Output #5
-2478      Y:0000B4 Y:0000B4                   DC      $0f8000+OFFSET                    ; Output #6
-2479      Y:0000B5 Y:0000B5                   DC      $0fc000+OFFSET                    ; Output #7
-2480   
-2481      Y:0000B6 Y:0000B6                   DC      $1e0000+OFFSET                    ; Output #0, video board #1
-2482      Y:0000B7 Y:0000B7                   DC      $1e4000+OFFSET                    ; Output #1
-2483      Y:0000B8 Y:0000B8                   DC      $1e8000+OFFSET                    ; Output #2
-2484      Y:0000B9 Y:0000B9                   DC      $1ec000+OFFSET                    ; Output #3
-2485      Y:0000BA Y:0000BA                   DC      $1f0000+OFFSET                    ; Output #4
-2486      Y:0000BB Y:0000BB                   DC      $1f4000+OFFSET                    ; Output #5
-2487      Y:0000BC Y:0000BC                   DC      $1f8000+OFFSET                    ; Output #6
-2488      Y:0000BD Y:0000BD                   DC      $1fc000+OFFSET                    ; Output #7
+2469      Y:0000A0 Y:0000A0                   DC      $1d4000+@CVI(DSUB/VIDEOmax*4095)  ; P2, Pin #15
+2470      Y:0000A1 Y:0000A1                   DC      $1d8000+@CVI(CELLDRAIN/VIDEOmax*4095) ; P2, Pin #31
+2471      Y:0000A2 Y:0000A2                   DC      $1dc000+@CVI(VSOURCE/VIDEOmax*4095) ; P2, Pin #14  External source follower lo
+ad
+2472   
+2473                                ; Bipolar +/-5 volts output voltages, on the 15 pin DB output connector
+2474      Y:0000A3 Y:0000A3                   DC      $2c4000+@CVI((VDD+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #17
+2475      Y:0000A4 Y:0000A4                   DC      $2c8000+@CVI((ZERO+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #33
+2476      Y:0000A5 Y:0000A5                   DC      $2cc000+@CVI((ZERO+VIDEOmax)/(2.0*VIDEOmax)*4095) ; P2, Pin #162
+2477   
+2478                                ; Unipolar 0 to 5 volts output voltages, video board #2
+2479      Y:0000A6 Y:0000A6                   DC      $2d0000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #32
+2480      Y:0000A7 Y:0000A7                   DC      $2d4000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #15
+2481      Y:0000A8 Y:0000A8                   DC      $2d8000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #31
+2482      Y:0000A9 Y:0000A9                   DC      $2dc000+@CVI(VSOURCE/VIDEOmax*4095) ; P2, Pin #14  External source follower lo
+ad
+2483   
+2484                                ; Unipolar 0 to 5 volts output voltages, video board #3
+2485      Y:0000AA Y:0000AA                   DC      $3d0000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #32
+2486      Y:0000AB Y:0000AB                   DC      $3d4000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #15
+2487      Y:0000AC Y:0000AC                   DC      $3d8000+@CVI(ZERO/VIDEOmax*4095)  ; P2, Pin #31
+2488      Y:0000AD Y:0000AD                   DC      $3dc000+@CVI(VSOURCE/VIDEOmax*4095) ; P2, Pin #14  External source follower lo
+ad
 2489   
-2490      Y:0000BE Y:0000BE                   DC      $2e0000+OFFSET                    ; Output #0, video board #2
-2491      Y:0000BF Y:0000BF                   DC      $2e4000+OFFSET                    ; Output #1
-2492      Y:0000C0 Y:0000C0                   DC      $2e8000+OFFSET                    ; Output #2
-2493      Y:0000C1 Y:0000C1                   DC      $2ec000+OFFSET                    ; Output #3
-2494      Y:0000C2 Y:0000C2                   DC      $2f0000+OFFSET                    ; Output #4
-2495      Y:0000C3 Y:0000C3                   DC      $2f4000+OFFSET                    ; Output #5
-2496      Y:0000C4 Y:0000C4                   DC      $2f8000+OFFSET                    ; Output #6
-2497      Y:0000C5 Y:0000C5                   DC      $2fc000+OFFSET                    ; Output #7
-2498   
-2499      Y:0000C6 Y:0000C6                   DC      $3e0000+OFFSET                    ; Output #0, video board #3
-2500      Y:0000C7 Y:0000C7                   DC      $3e4000+OFFSET                    ; Output #1
-2501      Y:0000C8 Y:0000C8                   DC      $3e8000+OFFSET                    ; Output #2
-2502      Y:0000C9 Y:0000C9                   DC      $3ec000+OFFSET                    ; Output #3
-2503      Y:0000CA Y:0000CA                   DC      $3f0000+OFFSET                    ; Output #4
-2504      Y:0000CB Y:0000CB                   DC      $3f4000+OFFSET                    ; Output #5
-2505      Y:0000CC Y:0000CC                   DC      $3f8000+OFFSET                    ; Output #6
-2506      Y:0000CD Y:0000CD                   DC      $3fc000+OFFSET                    ; Output #7
-2507                                END_DC_BIASES
-2508   
-2509                                ;  Zero out the DC biases during the power-on sequence
-2510                                ZERO_BIASES
-2511      Y:0000CE Y:0000CE                   DC      END_ZERO_BIASES-ZERO_BIASES-1
-2512      Y:0000CF Y:0000CF                   DC      $0c4800                           ; Pin #17
-2513      Y:0000D0 Y:0000D0                   DC      $0c8800                           ; Pin #33
-2514      Y:0000D1 Y:0000D1                   DC      $0cc800                           ; Pin #16
-2515      Y:0000D2 Y:0000D2                   DC      $0d0000                           ; Pin #32
-2516      Y:0000D3 Y:0000D3                   DC      $0d4000                           ; Pin #15
-2517      Y:0000D4 Y:0000D4                   DC      $0d8000                           ; Pin #31
-2518      Y:0000D5 Y:0000D5                   DC      $0dc000                           ; Pin #14
-2519   
-2520      Y:0000D6 Y:0000D6                   DC      $1c4800                           ; Pin #17
-2521      Y:0000D7 Y:0000D7                   DC      $1c8800                           ; Pin #33
-2522      Y:0000D8 Y:0000D8                   DC      $1cc800                           ; Pin #16
-2523      Y:0000D9 Y:0000D9                   DC      $1d0000                           ; Pin #32
-2524      Y:0000DA Y:0000DA                   DC      $1d4000                           ; Pin #15
-2525      Y:0000DB Y:0000DB                   DC      $1d8000                           ; Pin #31
-Motorola DSP56300 Assembler  Version 6.3.4   13-07-31  15:42:36  H2RG.waveforms  Page 47
+2490                                ;Individual channel offsets, to be improved, median of each channel found from reference pixels 
+at top of image.
+2491   
+2492      5.379600E+004             M00       EQU     53796.0
+2493      5.428400E+004             M01       EQU     54284.0
+2494      5.445800E+004             M02       EQU     54458.0
+2495      5.427400E+004             M03       EQU     54274.0
+2496      5.369800E+004             M04       EQU     53698.0
+2497      5.436300E+004             M05       EQU     54363.0
+2498      5.408000E+004             M06       EQU     54080.0
+2499      5.368200E+004             M07       EQU     53682.0
+2500   
+2501      5.326000E+004             M10       EQU     53260.0
+2502      5.354800E+004             M11       EQU     53548.0
+2503      5.440400E+004             M12       EQU     54404.0
+2504      5.361200E+004             M13       EQU     53612.0
+2505      5.402400E+004             M14       EQU     54024.0
+2506      5.366700E+004             M15       EQU     53667.0
+2507      5.315100E+004             M16       EQU     53151.0
+2508      5.396500E+004             M17       EQU     53965.0
+2509   
+2510      5.255400E+004             M20       EQU     52554.0
+2511      5.275000E+004             M21       EQU     52750.0
+2512      5.277500E+004             M22       EQU     52775.0
+2513      5.223600E+004             M23       EQU     52236.0
+2514      5.253400E+004             M24       EQU     52534.0
+2515      5.167300E+004             M25       EQU     51673.0
+2516      5.188100E+004             M26       EQU     51881.0
+2517      5.220800E+004             M27       EQU     52208.0
+2518   
+2519      5.246900E+004             M30       EQU     52469.0
+2520      5.172200E+004             M31       EQU     51722.0
+2521      5.233300E+004             M32       EQU     52333.0
+2522      5.126000E+004             M33       EQU     51260.0
+2523      5.177500E+004             M34       EQU     51775.0
+2524      5.062200E+004             M35       EQU     50622.0
+2525      5.061800E+004             M36       EQU     50618.0
+2526      5.078800E+004             M37       EQU     50788.0
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 47
 
 
 
-2526      Y:0000DC Y:0000DC                   DC      $1dc000                           ; Pin #14
 2527   
-2528      Y:0000DD Y:0000DD                   DC      $2c4800                           ; Pin #17
-2529      Y:0000DE Y:0000DE                   DC      $2c8800                           ; Pin #33
-2530      Y:0000DF Y:0000DF                   DC      $2cc800                           ; Pin #16
-2531      Y:0000E0 Y:0000E0                   DC      $2d0000                           ; Pin #32
-2532      Y:0000E1 Y:0000E1                   DC      $2d4000                           ; Pin #15
-2533      Y:0000E2 Y:0000E2                   DC      $2d8000                           ; Pin #31
-2534      Y:0000E3 Y:0000E3                   DC      $2dc000                           ; Pin #14
-2535   
-2536      Y:0000E4 Y:0000E4                   DC      $3c4800                           ; Pin #17
-2537      Y:0000E5 Y:0000E5                   DC      $3c8800                           ; Pin #33
-2538      Y:0000E6 Y:0000E6                   DC      $3cc800                           ; Pin #16
-2539      Y:0000E7 Y:0000E7                   DC      $3d0000                           ; Pin #32
-2540      Y:0000E8 Y:0000E8                   DC      $3d4000                           ; Pin #15
-2541      Y:0000E9 Y:0000E9                   DC      $3d8000                           ; Pin #31
-2542      Y:0000EA Y:0000EA                   DC      $3dc000                           ; Pin #14
-2543                                END_ZERO_BIASES
-2544   
-2545   
-2546   
-2547   
-2548   
-2549   
-2550   
-2551                                 END_APPLICATON_Y_MEMORY
-2552      0000EB                              EQU     @LCV(L)
+2528      0.000000E+000             VB0       EQU     0.0
+2529      -1.000000E+001            VB1       EQU     -10.0
+2530      -2.000000E+001            VB2       EQU     -20.0
+2531      -2.000000E+001            VB3       EQU     -20.0
+2532   
+2533                                ;Boards are all scaled to CH07 of Board 0
+2534                                ;Video Board 0
+2535      0002AC                    OFFSET00  EQU     @CVI(OFFSET+VB0)
+2536      0002AC                    OFFSET01  EQU     @CVI(OFFSET+VB0)
+2537      0002AC                    OFFSET02  EQU     @CVI(OFFSET+VB0)
+2538      0002AC                    OFFSET03  EQU     @CVI(OFFSET+VB0)
+2539      0002AC                    OFFSET04  EQU     @CVI(OFFSET+VB0)
+2540      0002AC                    OFFSET05  EQU     @CVI(OFFSET+VB0)
+2541      0002AC                    OFFSET06  EQU     @CVI(OFFSET+VB0)
+2542      0002AC                    OFFSET07  EQU     @CVI(OFFSET+VB0)
+2543   
+2544                                ;Video Board 1
+2545      0002A2                    OFFSET10  EQU     @CVI(OFFSET+VB1)
+2546      0002A2                    OFFSET11  EQU     @CVI(OFFSET+VB1)
+2547      0002A2                    OFFSET12  EQU     @CVI(OFFSET+VB1)
+2548      0002A2                    OFFSET13  EQU     @CVI(OFFSET+VB1)
+2549      0002A2                    OFFSET14  EQU     @CVI(OFFSET+VB1)
+2550      0002A2                    OFFSET15  EQU     @CVI(OFFSET+VB1)
+2551      0002A2                    OFFSET16  EQU     @CVI(OFFSET+VB1)
+2552      0002A2                    OFFSET17  EQU     @CVI(OFFSET+VB1)
 2553   
-2554                                ;  End of program
-2555                                          END
+2554                                ;Video Board 2
+2555      000298                    OFFSET20  EQU     @CVI(OFFSET+VB2)
+2556      000298                    OFFSET21  EQU     @CVI(OFFSET+VB2)
+2557      000298                    OFFSET22  EQU     @CVI(OFFSET+VB2)
+2558      000298                    OFFSET23  EQU     @CVI(OFFSET+VB2)
+2559      000298                    OFFSET24  EQU     @CVI(OFFSET+VB2)
+2560      000298                    OFFSET25  EQU     @CVI(OFFSET+VB2)
+2561      000298                    OFFSET26  EQU     @CVI(OFFSET+VB2)
+2562      000298                    OFFSET27  EQU     @CVI(OFFSET+VB2)
+2563   
+2564                                ;Video Board 3
+2565      000298                    OFFSET30  EQU     @CVI(OFFSET+VB3)
+2566      000298                    OFFSET31  EQU     @CVI(OFFSET+VB3)
+2567      000298                    OFFSET32  EQU     @CVI(OFFSET+VB3)
+2568      000298                    OFFSET33  EQU     @CVI(OFFSET+VB3)
+2569      000298                    OFFSET34  EQU     @CVI(OFFSET+VB3)
+2570      000298                    OFFSET35  EQU     @CVI(OFFSET+VB3)
+2571      000298                    OFFSET36  EQU     @CVI(OFFSET+VB3)
+2572      000298                    OFFSET37  EQU     @CVI(OFFSET+VB3)
+2573   
+2574                                ; Video processor offset voltages
+2575      Y:0000AE Y:0000AE                   DC      $0e0000+OFFSET00                  ; Output #0, video board #0
+2576      Y:0000AF Y:0000AF                   DC      $0e4000+OFFSET01                  ; Output #1
+2577      Y:0000B0 Y:0000B0                   DC      $0e8000+OFFSET02                  ; Output #2
+2578      Y:0000B1 Y:0000B1                   DC      $0ec000+OFFSET03                  ; Output #3
+2579      Y:0000B2 Y:0000B2                   DC      $0f0000+OFFSET04                  ; Output #4
+2580      Y:0000B3 Y:0000B3                   DC      $0f4000+OFFSET05                  ; Output #5
+2581      Y:0000B4 Y:0000B4                   DC      $0f8000+OFFSET06                  ; Output #6
+2582      Y:0000B5 Y:0000B5                   DC      $0fc000+OFFSET07                  ; Output #7
+2583   
+2584      Y:0000B6 Y:0000B6                   DC      $1e0000+OFFSET10                  ; Output #0, video board #1
+2585      Y:0000B7 Y:0000B7                   DC      $1e4000+OFFSET11                  ; Output #1
+2586      Y:0000B8 Y:0000B8                   DC      $1e8000+OFFSET12                  ; Output #2
+2587      Y:0000B9 Y:0000B9                   DC      $1ec000+OFFSET13                  ; Output #3
+2588      Y:0000BA Y:0000BA                   DC      $1f0000+OFFSET14                  ; Output #4
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 48
+
+
+
+2589      Y:0000BB Y:0000BB                   DC      $1f4000+OFFSET15                  ; Output #5
+2590      Y:0000BC Y:0000BC                   DC      $1f8000+OFFSET16                  ; Output #6
+2591      Y:0000BD Y:0000BD                   DC      $1fc000+OFFSET17                  ; Output #7
+2592   
+2593      Y:0000BE Y:0000BE                   DC      $2e0000+OFFSET20                  ; Output #0, video board #2
+2594      Y:0000BF Y:0000BF                   DC      $2e4000+OFFSET21                  ; Output #1
+2595      Y:0000C0 Y:0000C0                   DC      $2e8000+OFFSET22                  ; Output #2
+2596      Y:0000C1 Y:0000C1                   DC      $2ec000+OFFSET23                  ; Output #3
+2597      Y:0000C2 Y:0000C2                   DC      $2f0000+OFFSET24                  ; Output #4
+2598      Y:0000C3 Y:0000C3                   DC      $2f4000+OFFSET25                  ; Output #5
+2599      Y:0000C4 Y:0000C4                   DC      $2f8000+OFFSET26                  ; Output #6
+2600      Y:0000C5 Y:0000C5                   DC      $2fc000+OFFSET27                  ; Output #7
+2601   
+2602      Y:0000C6 Y:0000C6                   DC      $3e0000+OFFSET30                  ; Output #0, video board #3
+2603      Y:0000C7 Y:0000C7                   DC      $3e4000+OFFSET31                  ; Output #1
+2604      Y:0000C8 Y:0000C8                   DC      $3e8000+OFFSET32                  ; Output #2
+2605      Y:0000C9 Y:0000C9                   DC      $3ec000+OFFSET33                  ; Output #3
+2606      Y:0000CA Y:0000CA                   DC      $3f0000+OFFSET34                  ; Output #4
+2607      Y:0000CB Y:0000CB                   DC      $3f4000+OFFSET34                  ; Output #5
+2608      Y:0000CC Y:0000CC                   DC      $3f8000+OFFSET36                  ; Output #6
+2609      Y:0000CD Y:0000CD                   DC      $3fc000+OFFSET37                  ; Output #7
+2610                                END_DC_BIASES
+2611   
+2612                                ;  Zero out the DC biases during the power-on sequence
+2613                                ZERO_BIASES
+2614      Y:0000CE Y:0000CE                   DC      END_ZERO_BIASES-ZERO_BIASES-1
+2615      Y:0000CF Y:0000CF                   DC      $0c4800                           ; Pin #17
+2616      Y:0000D0 Y:0000D0                   DC      $0c8800                           ; Pin #33
+2617      Y:0000D1 Y:0000D1                   DC      $0cc800                           ; Pin #16
+2618      Y:0000D2 Y:0000D2                   DC      $0d0000                           ; Pin #32
+2619      Y:0000D3 Y:0000D3                   DC      $0d4000                           ; Pin #15
+2620      Y:0000D4 Y:0000D4                   DC      $0d8000                           ; Pin #31
+2621      Y:0000D5 Y:0000D5                   DC      $0dc000                           ; Pin #14
+2622   
+2623      Y:0000D6 Y:0000D6                   DC      $1c4800                           ; Pin #17
+2624      Y:0000D7 Y:0000D7                   DC      $1c8800                           ; Pin #33
+2625      Y:0000D8 Y:0000D8                   DC      $1cc800                           ; Pin #16
+2626      Y:0000D9 Y:0000D9                   DC      $1d0000                           ; Pin #32
+2627      Y:0000DA Y:0000DA                   DC      $1d4000                           ; Pin #15
+2628      Y:0000DB Y:0000DB                   DC      $1d8000                           ; Pin #31
+2629      Y:0000DC Y:0000DC                   DC      $1dc000                           ; Pin #14
+2630   
+2631      Y:0000DD Y:0000DD                   DC      $2c4800                           ; Pin #17
+2632      Y:0000DE Y:0000DE                   DC      $2c8800                           ; Pin #33
+2633      Y:0000DF Y:0000DF                   DC      $2cc800                           ; Pin #16
+2634      Y:0000E0 Y:0000E0                   DC      $2d0000                           ; Pin #32
+2635      Y:0000E1 Y:0000E1                   DC      $2d4000                           ; Pin #15
+2636      Y:0000E2 Y:0000E2                   DC      $2d8000                           ; Pin #31
+2637      Y:0000E3 Y:0000E3                   DC      $2dc000                           ; Pin #14
+2638   
+2639      Y:0000E4 Y:0000E4                   DC      $3c4800                           ; Pin #17
+2640      Y:0000E5 Y:0000E5                   DC      $3c8800                           ; Pin #33
+2641      Y:0000E6 Y:0000E6                   DC      $3cc800                           ; Pin #16
+2642      Y:0000E7 Y:0000E7                   DC      $3d0000                           ; Pin #32
+2643      Y:0000E8 Y:0000E8                   DC      $3d4000                           ; Pin #15
+2644      Y:0000E9 Y:0000E9                   DC      $3d8000                           ; Pin #31
+2645      Y:0000EA Y:0000EA                   DC      $3dc000                           ; Pin #14
+2646                                END_ZERO_BIASES
+2647   
+2648   
+2649   
+2650   
+Motorola DSP56300 Assembler  Version 6.3.4   13-11-01  17:17:51  H2RG.waveforms  Page 49
+
+
+
+2651   
+2652   
+2653   
+2654                                 END_APPLICATON_Y_MEMORY
+2655      0000EB                              EQU     @LCV(L)
+2656   
+2657                                ;  End of program
+2658                                          END
 
 0    Errors
 0    Warnings
